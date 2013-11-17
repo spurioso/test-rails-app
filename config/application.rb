@@ -9,6 +9,9 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+# Prevent Heroku from trying to access database on deployment
+config.assets.initialize_on_precompile = false
+
 module TestApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
